@@ -13,12 +13,20 @@ function limpiarInput() {
 }
 
 function actualizarLista() {
-  lista.innerHTML = '';
-  amigos.forEach(nombre => {
-    const li = document.createElement('li');
-    li.textContent = nombre;
-    lista.appendChild(li);
-  });
+    // 1. Limpiar lista existente
+    lista.innerHTML = '';
+
+    // 2. Iterar sobre el arreglo usando un bucle for
+    for (let i = 0; i < amigos.length; i++) {
+        // 3. Crear un nuevo elemento <li>
+        const li = document.createElement('li');
+
+        // 4. Asignar el nombre correspondiente
+        li.textContent = amigos[i];
+
+        // 5. Agregar el elemento a la lista
+        lista.appendChild(li);
+    }
 }
 
 function mostrarResultado(ganador) {
